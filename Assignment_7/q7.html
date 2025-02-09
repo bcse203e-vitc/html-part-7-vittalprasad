@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+    function secondLargest(arr) {
+        let largest = -Infinity, second = -Infinity;
+
+        for (let num of arr) {
+            if (num > largest) {
+                second = largest;
+                largest = num;
+            } else if (num > second && num !== largest) {
+                second = num;
+            }
+        }
+
+        if (second === -Infinity) {
+            return null;
+        } else {
+            return second;
+        }
+    }
+
+    let input = prompt("Enter numbers separated by commas:");
+    let numbers = input.split(",").map(Number);
+
+    let result = secondLargest(numbers);
+
+    if (result === null) {
+        alert("No second largest number found.");
+    } else {
+        alert("Second largest number is: " + result);
+    }
+
+</script>
+</html>

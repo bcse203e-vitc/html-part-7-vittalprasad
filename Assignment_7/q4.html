@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    let input = prompt("Enter a word or phrase:");
+    function isPalindrome(str) {
+      let cleaned = str.toLowerCase().replace(/[^a-z0-9]/g, "");
+      return cleaned === cleaned.split("").reverse().join("");
+    }
+    alert(isPalindrome(input) ? "It's a palindrome!" : "Not a palindrome.");
+  </script>
+</html>
